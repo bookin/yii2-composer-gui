@@ -1,0 +1,22 @@
+{
+    "name": "bookin/yii2-composer-module",
+    "description": "Yii2 module for control packages",
+    "type": "yii2-extension",
+    "authors": [
+        {
+            "name": "Anton Mikhailov",
+            "email": "i.anton.mikhailov@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "*",
+        "bookin/yii2-composer-web": "*"
+    },
+    "repositories":  [
+        {
+            "type": "vcs",
+            "url": "https://github.com/bookin/yii2-helpers"
+        }
+    ]
+}
