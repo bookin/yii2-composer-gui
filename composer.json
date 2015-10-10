@@ -16,7 +16,12 @@
     "repositories":  [
         {
             "type": "vcs",
-            "url": "https://github.com/bookin/yii2-helpers"
+            "url": "https://github.com/bookin/yii2-composer-web"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "bookin\\composer\\module\\": ""
+        }
+    }
 }
