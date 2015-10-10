@@ -63,8 +63,8 @@ yii\bootstrap\Modal::end();
 ?>
 <?
 $this->registerJs('
-//    $(function(){
-//        $("#packages").load("'.Url::to('default/packages').'");
-//    });
+    $(function(){
+        $("#packages").load("'.Url::to('composer/default/packages').'");
+    });
 ');
 ?>
