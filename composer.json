@@ -1,5 +1,5 @@
 {
-    "name": "bookin/yii2-composer-module",
+    "name": "bookin/yii2-composer-gui",
     "description": "Yii2 module for control packages",
     "type": "yii2-extension",
     "authors": [
@@ -11,17 +11,11 @@
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "*",
-        "bookin/yii2-composer-web": "*"
+        "bookin/composer-api": "*"
     },
-    "repositories":  [
-        {
-            "type": "vcs",
-            "url": "https://github.com/bookin/yii2-composer-web"
-        }
-    ],
     "autoload": {
         "psr-4": {
-            "bookin\\composer\\module\\": ""
+            "bookin\\composer\\gui\\": ""
         }
     }
 }

@@ -1,6 +1,7 @@
 <?php
-namespace bookin\composer\module;
+namespace bookin\composer\gui;
 
+use bookin\composer\api\Composer;
 use \Yii;
 
 /**
@@ -10,7 +11,7 @@ use \Yii;
  */
 class Module extends \yii\base\Module
 {
-    public $controllerNamespace = 'bookin\composer\module\controllers';
+    public $controllerNamespace = 'bookin\composer\gui\controllers';
 
     public $_assetsBase, $_assetsPath;
 
@@ -48,5 +49,9 @@ class Module extends \yii\base\Module
             $this->_assetsBase = $url;
         }
         return $this->_assetsBase;
+    }
+
+    public function getComposer(){
+        return Composer::getInstance(Yii::getAlias('@app/composer.json'), Yii::getAlias('@app'));
     }
 }

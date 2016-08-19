@@ -5,7 +5,7 @@
  */
 
 use yii\bootstrap\Nav;
-use app\modules\composerGui\ModuleAsset;
+use bookin\composer\gui\ModuleAsset;
 
 $bundle = ModuleAsset::register($this);
 ?>

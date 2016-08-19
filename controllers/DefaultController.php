@@ -1,6 +1,6 @@
 <?php
 
-namespace bookin\composer\module\controllers;
+namespace bookin\composer\gui\controllers;
 
 use yii\web\Controller;
 use \Yii;
@@ -15,20 +15,15 @@ class DefaultController extends Controller
         return $this->render('index');
     }
 
-    public function actionTest(){
-        $composer = Yii::$app->composer;
-        var_dump($composer::searchPackage('yii2'));
-    }
-
     public function actionPackages(){
-        $composer = Yii::$app->composer;
+        $composer = $this->module->composer;
         $packages = $composer::getLocalPackages();
         return $this->renderAjax('packages',['packages'=>$packages]);
     }
 
     public function actionSearch($query){
-        $composer = Yii::$app->composer;
-        return $composer::findPackage($query);
+        $composer = $this->module->composer;
+        //$packages = $composer::findPackage($query,'*');
         $packages = $composer::searchPackage($query);
         return $this->renderAjax('search_packages',['packages'=>$packages]);
 
@@ -41,7 +36,7 @@ class DefaultController extends Controller
         if(isset($params['options'])){
             $options = $params['options'];
         }
-        $composer = Yii::$app->composer;
+        $composer = $this->module->composer;
         return $composer::runCommand($command, $options);
     }
 }

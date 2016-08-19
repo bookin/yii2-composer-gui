@@ -29,6 +29,6 @@ $(function(){
 
     $("#search-button").click(function(){
         var searchField = $("#search-field");
-        $(this).attr("href", "http://test.loc/web/composerGui/default/search?"+searchField.attr("name")+"="+searchField.val());
+        $(this).attr("href", "http://test.loc/web/composer/default/search?"+searchField.attr("name")+"="+searchField.val());
     });
 });

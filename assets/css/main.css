@@ -1,0 +1,11 @@
+.package-name{
+    font-size: 16px;
+}
+
+.panel-heading > *{
+    vertical-align: middle;
+}
+
+.authors > *{
+    font-size: 12px;
+}
