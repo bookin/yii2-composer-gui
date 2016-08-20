@@ -37,6 +37,8 @@ to the ```require``` section of your `composer.json` file.
 ```
 
 #### Open - `http://domain.loc/composer`
+
  
 P.S. It is beta, some functions might not work, or work but not as expected.
+
 P.S.S. You can create requests with your suggestions to changes to improve module.
