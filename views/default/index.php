@@ -9,34 +9,49 @@ use yii\helpers\Html;
 $assetPath = $this->context->module->assetsBase;
 ?>
 
-<ul class="list-inline">
-    <li>
-        <?=Html::a('List',['default/command', 'command'=>'list'],[
-            'class'=>'show-ajax-modal',
-            'data-header'=>'Lists commands'
-        ])?>
-    </li>
-    <li>
-        <?=Html::a('Help',['default/command', 'command'=>'help'],[
-            'class'=>'show-ajax-modal',
-            'data-header'=>'Help'
-        ])?>
-    </li>
-    <li>
-        <?=Html::a('Update All',['default/command', 'command'=>'update'],[
-            'class'=>'show-ajax-modal',
-            'data-header'=>'Update All'
-        ])?>
-    </li>
-    <li>
-        <?=Html::textInput('query', '',['id'=>'search-field', '']);?>
-        <?=Html::a('Search',['default/search'],[
-            'id'=>'search-button',
-            'class'=>'show-ajax-modal',
-            'data-header'=>'Update All',
-        ])?>
-    </li>
-</ul>
+<div class="row">
+    <div class="col-sm-8">
+        <ul class="list-inline">
+            <li>
+                <?=Html::a('Install',['default/install'],[
+                    'class'=>'show-ajax-modal',
+                    'data-header'=>'Install package'
+                ])?>
+            </li>
+            <li>
+                <?=Html::a('List',['default/command', 'command'=>'list'],[
+                    'class'=>'show-ajax-modal',
+                    'data-header'=>'Lists commands'
+                ])?>
+            </li>
+            <li>
+                <?=Html::a('Help',['default/command', 'command'=>'help'],[
+                    'class'=>'show-ajax-modal',
+                    'data-header'=>'Help'
+                ])?>
+            </li>
+            <li>
+                <?=Html::a('Update All',['default/command', 'command'=>'update'],[
+                    'class'=>'show-ajax-modal',
+                    'data-header'=>'Update All'
+                ])?>
+            </li>
+        </ul>
+    </div>
+    <div class="col-sm-4">
+        <div class="input-group">
+            <?=Html::textInput('query', '', ['id'=>'search-field', 'class'=>'form-control', 'placeholder'=>'package name']);?>
+            <span class="input-group-btn">
+                <?=Html::a('<span class="glyphicon glyphicon-search" aria-hidden="true"></span>',['default/search'],[
+                    'id'=>'search-button',
+                    'class'=>'btn btn-default show-ajax-modal',
+                    'data-header'=>'Search',
+                ])?>
+            </span>
+        </div>
+    </div>
+</div>
+
 
 <h4>Packages:</h4>
 <div class="panel panel-default">
@@ -64,7 +79,7 @@ yii\bootstrap\Modal::end();
 <?
 $this->registerJs('
     $(function(){
-        $("#packages").load("'.Url::to('/web/composer/default/packages').'");
+        $("#packages").load("'.Url::to('default/packages').'");
     });
 ');
 ?>

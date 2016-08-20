@@ -15,6 +15,11 @@ class DefaultController extends Controller
         return $this->render('index');
     }
 
+    public function actionInstall(){
+        $package = Yii::$app->request->get('package')?:'';
+        return $this->renderAjax('install_form',['package'=>$package]);
+    }
+
     public function actionPackages(){
         $composer = $this->module->composer;
         $packages = $composer::getLocalPackages();

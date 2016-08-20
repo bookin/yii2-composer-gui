@@ -16,7 +16,7 @@ use yii\helpers\Url;
                 'buttons' => [
                     Html::a(
                         '<span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Update',
-                        ['default/command', 'command'=>'update', 'options'=>[$package->getName()]],
+                        ['default/command', 'command'=>'update', 'options'=>['packages'=>[$package->getName()]]],
                         [
                             'encode'=>false,
                             'class'=>'show-ajax-modal btn-xs',
@@ -25,7 +25,7 @@ use yii\helpers\Url;
                     ),
                     Html::a(
                         '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Delete',
-                        ['default/command', 'command'=>'remove', 'options'=>[$package->getName()]],
+                        ['default/command', 'command'=>'remove', 'options'=>['packages'=>[$package->getName()]]],
                         [
                             'encode'=>false,
                             'class'=>'show-ajax-modal btn-xs',
