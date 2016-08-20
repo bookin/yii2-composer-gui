@@ -2,6 +2,7 @@
     "name": "bookin/yii2-composer-gui",
     "description": "Yii2 module for control packages",
     "type": "yii2-extension",
+    "license": "MIT",
     "authors": [
         {
             "name": "Anton Mikhailov",
