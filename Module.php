@@ -52,6 +52,12 @@ class Module extends \yii\base\Module
     }
 
     public function getComposer(){
-        return Composer::getInstance(Yii::getAlias('@app/composer.json'), Yii::getAlias('@app'));
+        if(file_exists(Yii::getAlias('@app/composer.json'))){
+            //приложение Basic
+            return Composer::getInstance(Yii::getAlias('@app/composer.json'), Yii::getAlias('@app'));    
+        } else {
+            //приложение Advanced и т.п.
+            return Composer::getInstance(Yii::getAlias('@vendor/../composer.json'), Yii::getAlias('@vendor/..'));
+        }
     }
 }
